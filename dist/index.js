@@ -22,8 +22,6 @@ bot.onText(/manual/, (msg) => {
     const chatId = msg.chat.id;
     bot.sendMessage(chatId, `https://t.me/cryptostratagems`);
 });
-bot.onText(/back/, (msg) => (0, buttonHandlers_1.clickBack)(msg, bot, userContext));
-bot.onText(/statistics/, (msg) => (0, buttonHandlers_1.statistics)(msg, bot));
 bot.onText(/\/calculate/, (msg) => (0, calculateButton_1.menuCalculator)(msg, bot, userContext));
 bot.onText(/calculator/, (msg) => (0, calculateButton_1.menuCalculator)(msg, bot, userContext));
 bot.onText(/\/banks/, (msg) => (0, buttonHandlers_1.getListBank)(msg, bot));
