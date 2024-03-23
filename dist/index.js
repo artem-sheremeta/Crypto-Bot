@@ -18,16 +18,12 @@ bot.onText(/menu/, (msg) => (0, buttonHandlers_1.clickMenu)(msg, bot, userContex
 bot.onText(/manual/, (msg) => (0, buttonHandlers_1.manual)(msg, bot));
 bot.onText(/back/, (msg) => (0, buttonHandlers_1.clickBack)(msg, bot, userContext));
 bot.onText(/limits/, (msg) => (0, buttonHandlers_1.statistics)(msg, bot));
-bot.onText(/manual/, (msg) => {
-    const chatId = msg.chat.id;
-    bot.sendMessage(chatId, `https://t.me/cryptostratagems`);
-});
 bot.onText(/\/calculate/, (msg) => (0, calculateButton_1.menuCalculator)(msg, bot, userContext));
 bot.onText(/calculator/, (msg) => (0, calculateButton_1.menuCalculator)(msg, bot, userContext));
 bot.onText(/\/banks/, (msg) => (0, buttonHandlers_1.getListBank)(msg, bot));
 bot.onText(/transaction manager/, (msg) => (0, buttonHandlers_1.getListBank)(msg, bot));
 bot.onText(/\/help/, (msg) => (0, buttonHandlers_1.help)(msg, bot));
-bot.onText(/help/, (msg) => (0, buttonHandlers_1.help)(msg, bot));
+bot.onText(/❓ help/, (msg) => (0, buttonHandlers_1.help)(msg, bot));
 const callbackHandlersForCalculate = {
     sum_buy: (chatId, messageId, bot) => {
         userContext[chatId].isSumBuy = true;

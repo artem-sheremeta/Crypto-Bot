@@ -48,25 +48,19 @@ const bot = new TelegramBot(process.env.TOKEN!, { polling: true });
 
 const userContext: UserContext = {};
 
-bot.onText(/\/start/, (msg: Message) => clickStart(msg, bot, userContext));
+bot.onText(/\/start/, (msg) => clickStart(msg, bot, userContext));
 bot.onText(/menu/, (msg) => clickMenu(msg, bot, userContext));
 bot.onText(/manual/, (msg) => manual(msg, bot));
 bot.onText(/back/, (msg) => clickBack(msg, bot, userContext));
 bot.onText(/limits/, (msg) => statistics(msg, bot));
-bot.onText(/manual/, (msg) => {
-  const chatId = msg.chat.id;
-  bot.sendMessage(chatId, `https://t.me/cryptostratagems`);
-});
-bot.onText(/\/calculate/, (msg: Message) =>
-  menuCalculator(msg, bot, userContext)
-);
+bot.onText(/\/calculate/, (msg) => menuCalculator(msg, bot, userContext));
 bot.onText(/calculator/, (msg) => menuCalculator(msg, bot, userContext));
 
-bot.onText(/\/banks/, (msg: Message) => getListBank(msg, bot));
-bot.onText(/transaction manager/, (msg: Message) => getListBank(msg, bot));
+bot.onText(/\/banks/, (msg) => getListBank(msg, bot));
+bot.onText(/transaction manager/, (msg) => getListBank(msg, bot));
 
-bot.onText(/\/help/, (msg: Message) => help(msg, bot));
-bot.onText(/help/, (msg) => help(msg, bot));
+bot.onText(/\/help/, (msg) => help(msg, bot));
+bot.onText(/❓ help/, (msg) => help(msg, bot));
 
 const callbackHandlersForCalculate: {
   [key: string]: (
