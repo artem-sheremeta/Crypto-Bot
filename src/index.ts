@@ -57,9 +57,6 @@ bot.onText(/manual/, (msg) => {
   const chatId = msg.chat.id;
   bot.sendMessage(chatId, `https://t.me/cryptostratagems`);
 });
-bot.onText(/back/, (msg) => clickBack(msg, bot, userContext));
-bot.onText(/statistics/, (msg) => statistics(msg, bot));
-
 bot.onText(/\/calculate/, (msg: Message) =>
   menuCalculator(msg, bot, userContext)
 );
