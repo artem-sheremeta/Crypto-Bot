@@ -22,7 +22,7 @@ const setKey = (value: string, userContext: UserContext, chatId: number) => {
   userContext[chatId].currentKey = value;
 };
 
-function back(currentKey: string): string {
+export function back(currentKey: string): string {
   switch (currentKey) {
     case "menuButton":
       return "mainMenu";
